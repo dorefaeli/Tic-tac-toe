@@ -1,0 +1,101 @@
+{
+	"info": {
+		"name": "tic-tac-toe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "new game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/game_cli/new",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"game_cli",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "draw x",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Player\": \"X\",\n    \"Row\": \"0\",\n    \"Column\": \"0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/game_cli/{{GameID}}/draw_cell",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"game_cli",
+						"{{GameID}}",
+						"draw_cell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/game_cli/{{GameID}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"game_cli",
+						"{{GameID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
